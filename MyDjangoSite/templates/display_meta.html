@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Display meta</title>
+</head>
+<body>
+    <h1>Display meta</h1>
+    <p>Path is {{ path_no_domain }}.</p>
+    <p>HostName is {{ host_name }}.</p>
+    <p>FullPath is {{ full_path }}.</p>
+    {% if is_secure %}
+	<p>Https is visited.</p>
+    {% else %}
+	<p>Http is visited.</p>
+    {% endif %}
+    <table>
+    {% for k,v in key_values %}
+	<tr>
+ 	  <td>{{ k }}</d>
+	  <td>{{ v }}</d>
+ 	</tr>
+    {% endfor %}
+    </table>
+</body>
+</html>

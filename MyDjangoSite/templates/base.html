@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+    .center {text-align: center}
+    body { 
+           background:#ffffff; 
+         }
+    h1 { 
+	color:blue;
+        background-color:#00ffff;
+        padding:10px; 
+       }
+    #links
+      {
+        list-style-type:none;
+        margin:0px;
+        padding:0px;
+        overflow:hidden;
+      }
+    #links li{ 
+	float:left;
+	font-size:20px; 
+      }
+    #links a:link,a:visited
+      {
+        display:block;
+        width:120px;
+        font-weight:bolder;
+        color:#ffffff;
+        background-color:#bebebe;
+        text-align:center;
+        padding:10px;
+        text-decoration:none;
+        text-transform:uppercase;
+      }
+    #links a:hover,a:active
+      {
+	background-color:#cc0000;
+      }
+    p { color:blue;
+        background-color:#00ffff;
+        padding:10px;
+        font-size:30px;
+        font-family: arial; 
+      }
+    td
+      {
+        text-align:center;
+      }
+    #cars
+      {
+        font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;
+        width:100%;
+        border-collapse:collapse; 
+      }
+    #cars td,#cars th
+      { 
+        font-size:1em;
+        border:1px solid #98bf21;
+        padding:3px 7px 2px 7px;
+      }
+    #cars th
+      {
+        font-size:1.1em;
+        text-align:center;
+        padding-top:5px;
+        padding-bottom:4px;
+        background-color:#A7C942;
+        color:#ffffff;
+      }
+    #cars tr.alt td
+      { 
+        color:#000000;
+        background-color:#EAF2D3;
+      }
+    caption
+      {
+        font-size:1.2em;
+        color:#98bf21;
+      }
+    #managers
+      {
+        overflow:hidden;
+      }
+    #managers li
+      {
+        font-weight:bolder;
+        color:#98bf21;
+      }
+    </style>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <h1 class="center">Welcome Minieye Data Page</h1>
+
+    <ul id="links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#Cooperation">Cooperation</a></li>
+    <li><a href="#We">We</a></li>
+    <li><a href="#About">About</a></li>
+    </ul>
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+    <hr>
+    <p class="center">Thank for visiting minieye data site.</p>
+    {% endblock %}
+
+</body>
+</html>

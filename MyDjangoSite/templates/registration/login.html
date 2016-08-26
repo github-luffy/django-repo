@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录|用户登录</title>
+</head>
+<style type="text/css">
+    body
+    {
+        color: #efd;
+        background-color: #453;
+        padding: 0 5em;
+        margin: 0;
+    }
+    h1
+    {
+        padding: 2em 1em;
+        background: #675;
+    }
+</style>
+<body>
+
+<h1>用户登录</h1>
+
+{#{% if forms.errors %}#}
+{# 	<p class="error">对不起，用户名或者密码错误！</p>#}
+{#{% endif %}#}
+<script>
+    document.write("<p>请输入您的用户名和密码！</p>")
+</script>
+<form action="" method="post">{% csrf_token %}
+    <div class="field" id="username">
+{#        {{ form.username.errors }}#}
+	    <label for="id_username">用户名:</label>
+        {{ form.username }}
+        {% if error_user %}<strong style="color: #cc0000">对不起，用户名不存在！</strong>{% endif %}
+    </div>
+	<br>
+    <div class="field" id="password">
+{#        {{ form.password.errors }}#}
+        <label for="id_password">密  码:</label>
+        {{ form.password }}
+        {% if error_password %}<strong style="color: #cc0000">对不起，密码输入错误！</strong>{% endif %}
+    </div>
+    <br>
+	<button type="submit">登 录</button>
+    <button type="button" onclick="to_register_confirm()">注 册</button>
+</form>
+<script>
+    function to_register_confirm()
+    {
+        var re = confirm("您好！" + '\n' + "确定要注册吗？")
+        if (re == true)
+        {
+            location.href='http://127.0.0.1:8000/minieye/register/'
+        }
+    }
+</script>
+</body>
+</html>
